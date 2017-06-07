@@ -1,0 +1,7 @@
+oeil;eye
+oreille;ear
+bras;arm
+salut;hello
+nucleaire;nuclear
+micro-ondes;microwaves
+ça;it
