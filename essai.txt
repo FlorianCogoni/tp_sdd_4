@@ -5,3 +5,5 @@ salut;hello
 nucleaire;nuclear
 micro-ondes;microwaves
 ça;it
+patate;potato
+rouge;red

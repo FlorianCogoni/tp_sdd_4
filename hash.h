@@ -12,12 +12,12 @@ typedef struct tabmaj{
     liste_chaine_t * tab[HASH_MAX];
 } tabmaj_t;
 
-liste_chaine_t * recherche(char mot[], tabmaj_t t);
 tabmaj_t * creation();
+liste_chaine_t * recherche(char mot[], tabmaj_t t);
 void insertion(char mot[], char trad[], tabmaj_t *t);
-void traduction(char mot[], tabmaj_t t);
-void liberation(tabmaj_t * t);
-void trad_liste(char * l[], int n, tabmaj_t * t);
 void insertion_fichier(char nom[], tabmaj_t * t);
+void traduction(char mot[], tabmaj_t t);
+void trad_liste(char * l[], int n, tabmaj_t * t);
+void liberation(tabmaj_t * t);
 
 #endif
