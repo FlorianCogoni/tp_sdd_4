@@ -54,23 +54,24 @@ void insertion_fichier (char nom[], tabmaj_t * t)
     int i;
     char c;
     FILE * fichier = NULL;
-    char mot[30];
-    char trad[30];
+    char mot[30]="";
+    char trad[30]="";
     fichier = fopen(nom,"r");
     if(fichier != NULL)
     {
-        while(!feof(fichier))
+        while(!feof(fichier)) /* tant qu'on est pas à la fin du fichier */
         {
-            fscanf(fichier,"%c",&c);
+            fscanf(fichier,"%c",&c);  /* on prend caractère par caractère ... */
             i = 0;
-            while (c != ';')
+            while (c != ';')  /* ... jusqu'au point-virgule */
             {
                 mot[i] = c;
                 i++;
                 fscanf(fichier,"%c",&c);
             }
-            fgets(trad, 30, fichier);
-            insertion(mot, trad, t);
+            mot[i]='\0';  /* on marque la fin du mot */
+            fgets(trad, 30, fichier); /* on récupère le reste de la ligne qui est la trad */
+            insertion(mot, trad, t);  /* on insère le mot et la trad */
         }
         fclose(fichier);
     }
