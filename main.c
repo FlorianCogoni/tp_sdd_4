@@ -2,33 +2,35 @@
 #include "hash.h"
 
 int main() {
-    char * l[4] = {
+    char * ListeATraduire1[4] = {
             "rouge",
             "bleu",
             "vert",
             "violet"
     };
-    char * l2[6] = {
+    char * ListeATraduire2[7] = {
             "bras",
             "oeil",
             "oreille",
             "ça",
+            "orange",
             "micro-ondes",
             "salut"
     };
-    tabmaj_t * adr_tab = creation();
-    /*insertion("patate","potato",adr_tab);
-    insertion("gachette","trigger",adr_tab);
-    insertion("rouge","red",adr_tab);
-    insertion("bleu","blue",adr_tab);
-    insertion("vert","green",adr_tab);
-    insertion("cuiller","spoon",adr_tab);*/
-    insertion_fichier("./essai.txt",adr_tab);
-    traduction("patate",*adr_tab);
-    trad_liste(l,4,adr_tab);
-    trad_liste(l2,6,adr_tab);
-    /*traduction("cuiller",*adr_tab);
-    traduction("patato",*adr_tab);*/
-    liberation(adr_tab);
+    tabmaj_t * adr_tab_vide = creation();
+    tabmaj_t * adr_tab_normal = creation();
+    printf("Insertion d'un fichier texte :\n\n");
+    insertion_fichier("normal.txt",adr_tab_normal);
+    printf("Test traduction table vide :\n\n");
+    trad_liste(ListeATraduire1,4,adr_tab_vide);
+    printf("\n");
+    printf("Test traduction table normale :\n\n");
+    trad_liste(ListeATraduire1,4,adr_tab_normal);
+    printf("\n");
+    trad_liste(ListeATraduire2,7,adr_tab_normal);
+    printf("Libération des tables :\n\n");
+    liberation(adr_tab_normal);
+    liberation(adr_tab_vide);
+    printf("Fin des tests\n");
     return 0;
 }

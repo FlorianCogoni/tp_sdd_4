@@ -87,7 +87,7 @@ void traduction(char mot[], tabmaj_t t)
     }
     else  /* le mot n'existe pas dans le dico */
     {
-        printf("%s n'est pas dans le dictionnaire \n",mot);
+        printf("%s n'est pas dans le dictionnaire \n\n",mot);
     }
 }
 
